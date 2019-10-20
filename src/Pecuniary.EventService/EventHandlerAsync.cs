@@ -6,7 +6,7 @@ using Amazon;
 using Amazon.Lambda.Core;
 using Amazon.Lambda.DynamoDBEvents;
 using Amazon.SimpleNotificationService;
-using Logging.LambdaLogger;
+using EricBach.LambdaLogger;
 using JsonSerializer = Amazon.Lambda.Serialization.Json.JsonSerializer;
 
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
