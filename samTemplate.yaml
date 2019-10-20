@@ -1,0 +1,75 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Pecuniary EventHandler
+
+Parameters:
+  AppName:
+    Description: Application name
+    Type: String
+    Default: Pecuniary
+#  SecGroup:
+#    Description: Security Group ID
+#    Type: String
+#  # These have to be individual strings for now until List of Subnet IDs can be supported
+#  Subnet1:
+#    Description: Subnet1
+#    Type: String
+#  Subnet2:
+#    Description: Subnet2
+#    Type: String
+  PecuniaryStackParameter:
+    Type: String
+    Default: pecuniary-stack
+
+Globals:
+  Function:
+    Timeout: 30
+
+Resources:
+  EventService:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: pecuniary-EventService
+      Handler: Pecuniary.EventService::Pecuniary.EventService.Function::EventHandlerAsync
+      Runtime: dotnetcore2.1
+      CodeUri: src/Pecuniary.EventService/bin/Debug/netcoreapp2.1/publish
+      MemorySize: 384
+      ReservedConcurrentExecutions: 1
+      Environment:
+        Variables:
+          AccountCreatedEventTopic:
+            Fn::ImportValue:
+                !Sub ${PecuniaryStackParameter}-AccountCreatedEventTopicArn
+            #arn:aws:sns:{AWS::Region}:{AWS::AccountId}:pecuniary-AccountCreatedEventTopic
+          AccountUpdatedEventTopic:
+            Fn::ImportValue:
+              !Sub ${PecuniaryStackParameter}-AccountUpdatedEventTopicArn
+            #arn:aws:sns:{AWS::Region}:{AWS::AccountId}:pecuniary-AccountUpdatedEventTopic
+      Events:
+        DynamoDB1:
+          Type: DynamoDB
+          Properties:
+            # ToDo Reference the ARN to move this out in a separate stack
+            #Stream: !GetAtt PecuniaryTable.StreamArn
+            Stream:
+              Fn::ImportValue:
+                !Sub ${PecuniaryStackParameter}-DynamoDbStreamArn
+              #arn:aws:dynamodb:{AWS::Region}:{AWS::AccountId}:table/pecuniary-EventStore/stream/2019-10-20T01:48:36.127
+            StartingPosition: TRIM_HORIZON
+            BatchSize: 100
+      Policies: 
+        - AWSLambdaDynamoDBExecutionRole
+        - Statement:
+          - Effect: Allow
+            Action:
+              - sns:ListTopics
+              - sns:Publish
+            Resource: 
+              #- arn:aws:sns:{AWS::Region}:{AWS::AccountId}:pecuniary-AccountCreatedEventTopic
+              #- arn:aws:sns:{AWS::Region}:{AWS::AccountId}:pecuniary-AccountUpdatedEventTopic
+              - Fn::ImportValue:
+                 !Sub ${PecuniaryStackParameter}-AccountCreatedEventTopicArn
+              - Fn::ImportValue:
+                 !Sub ${PecuniaryStackParameter}-AccountUpdatedEventTopicArn
+      Tags:
+        AppName: !Ref AppName 
