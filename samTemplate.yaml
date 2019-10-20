@@ -29,17 +29,17 @@ Resources:
         Variables:
           AccountCreatedEventTopic:
             Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-AccountCreatedEventTopicArn
+                !Sub ${PecuniaryStackParameter}-PecuniaryAccountCreatedEventTopicArn
           AccountUpdatedEventTopic:
             Fn::ImportValue:
-              !Sub ${PecuniaryStackParameter}-AccountUpdatedEventTopicArn
+              !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
       Events:
         DynamoDB1:
           Type: DynamoDB
           Properties:
             Stream:
               Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-DynamoDbStreamArn
+                !Sub ${PecuniaryStackParameter}-PecuniaryDynamoDbEventStoreStreamArn
             StartingPosition: TRIM_HORIZON
             BatchSize: 100
       Policies: 
@@ -51,8 +51,8 @@ Resources:
               - sns:Publish
             Resource: 
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-AccountCreatedEventTopicArn
+                 !Sub ${PecuniaryStackParameter}-PecuniaryAccountCreatedEventTopicArn
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-AccountUpdatedEventTopicArn
+                 !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
       Tags:
         AppName: !Ref AppName 
