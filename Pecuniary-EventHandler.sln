@@ -13,9 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BEA62126
 		stage.json = stage.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{46A0174F-076F-41B2-AF6C-D3D988675D65}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pecuniary.EventService", "src\Pecuniary.EventService\Pecuniary.EventService.csproj", "{7A03495F-4C9A-4ACD-85F8-B7252BAF9660}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pecuniary.EventService", "Pecuniary.EventService\Pecuniary.EventService.csproj", "{7A03495F-4C9A-4ACD-85F8-B7252BAF9660}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

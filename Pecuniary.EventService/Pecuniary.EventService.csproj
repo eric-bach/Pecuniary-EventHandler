@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <RootNamespace>Pecuniary.EventService</RootNamespace>
     <AssemblyName>Pecuniary.EventService</AssemblyName>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
@@ -10,8 +10,8 @@
   <ItemGroup>
     <PackageReference Include="Amazon.Lambda.Core" Version="1.1.0" />
     <PackageReference Include="Amazon.Lambda.DynamoDBEvents" Version="1.1.0" />
-    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.5.0" />
-    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.2" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.6.0" />
+    <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.3.101.76" />
     <PackageReference Include="EricBach.LambdaLogger" Version="1.0.0" />
   </ItemGroup>
 
