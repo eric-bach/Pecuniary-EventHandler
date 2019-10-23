@@ -22,7 +22,7 @@ Resources:
       FunctionName: pecuniary-EventService
       Handler: Pecuniary.EventService::Pecuniary.EventService.Function::EventHandlerAsync
       Runtime: dotnetcore2.1
-      CodeUri: src/Pecuniary.EventService/bin/Debug/netcoreapp2.1/publish
+      CodeUri: Pecuniary.EventService/bin/Debug/netcoreapp2.1/publish
       MemorySize: 384
       ReservedConcurrentExecutions: 1
       Environment:

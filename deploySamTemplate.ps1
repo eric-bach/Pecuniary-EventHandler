@@ -49,11 +49,11 @@ else
 {
     Write-Host "`n`nPrebuild:"
     
-    dotnet restore src/Pecuniary.EventService/Pecuniary.EventService.csproj
+    dotnet restore Pecuniary.EventService/Pecuniary.EventService.csproj
     
     Write-Host "`n`nBuild:"
     
-    dotnet publish src/Pecuniary.EventService/Pecuniary.EventService.csproj
+    dotnet publish Pecuniary.EventService/Pecuniary.EventService.csproj
 }
   
 Write-Host "`n`nDeploy:"
