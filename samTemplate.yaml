@@ -33,6 +33,9 @@ Resources:
           AccountUpdatedEventTopic:
             Fn::ImportValue:
               !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
+          SecurityCreatedEventTopic:
+            Fn::ImportValue:
+                !Sub ${PecuniaryStackParameter}-PecuniarySecurityCreatedEventTopicArn
       Events:
         DynamoDB1:
           Type: DynamoDB
@@ -54,5 +57,7 @@ Resources:
                  !Sub ${PecuniaryStackParameter}-PecuniaryAccountCreatedEventTopicArn
               - Fn::ImportValue:
                  !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
+              - Fn::ImportValue:
+                 !Sub ${PecuniaryStackParameter}-PecuniarySecurityCreatedEventTopicArn
       Tags:
         AppName: !Ref AppName 
