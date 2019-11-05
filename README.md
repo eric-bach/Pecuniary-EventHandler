@@ -1,32 +1,11 @@
-# Pecuniary-AccountQuery
+# Pecuniary-EventHandler
 
-<a href="https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler"><img src="https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true" /></a>
+[![Build status](https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true)](https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler)
+[![codecov](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler/branch/master/graph/badge.svg)](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler)
+[![CodeFactor](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler/badge)](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler)
 
-An event bus for the Pecuniary CQRS application to process emitted events from the Command services to Query services
+`Pecuniary-EventHandler` is a asynchronous serverless event bus for routing events from the Pecuniary command microservices to subscribed Pecuniary query microservices.
 
 ## License
 
-```
-The MIT License (MIT)
-
-Copyright (c) 2019 Eric Bach
-https://github.com/eric-bach/Pecuniary-EventHandler
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+`Pecuniary-EventHandler` uses the MIT license. See the [license](https://github.com/eric-bach/Pecuniary-EventHandler/blob/master/LICENSE).
