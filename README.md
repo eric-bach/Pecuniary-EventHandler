@@ -1,10 +1,14 @@
-# Pecuniary-EventHandler
-
-[![Build status](https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true)](https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler)
-[![codecov](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler/branch/master/graph/badge.svg)](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler)
-[![CodeFactor](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler/badge)](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler)
+# Pecuniary EventHandler microservice
 
 `Pecuniary-EventHandler` is a asynchronous serverless event bus for routing events from the Pecuniary command microservices to subscribed Pecuniary query microservices.
+
+## Build Status
+
+Pipeline | Build Status
+-|-
+Unit tests | [![Build status](https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true)](https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler)
+Code coverage | [![codecov](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler/branch/master/graph/badge.svg)](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler)
+Code review | [![CodeFactor](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler/badge)](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler)
 
 ## License
 
