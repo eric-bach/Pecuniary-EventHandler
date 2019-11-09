@@ -6,9 +6,10 @@
 
 Pipeline | Build Status
 -|-
-Unit tests | [![Build status](https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true)](https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler)
-Code coverage | [![codecov](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler/branch/master/graph/badge.svg)](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler)
-Code review | [![CodeFactor](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler/badge)](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler)
+Build | [![Build status](https://ci.appveyor.com/api/projects/status/gyyyha9jl1y1gs9s?svg=true)](https://ci.appveyor.com/project/eric-bach/pecuniary-eventhandler)
+Unit Tests | ![AppVeyor tests](https://img.shields.io/appveyor/tests/eric-bach/Pecuniary-EventHandler)
+Code Coverage | [![codecov](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler/branch/master/graph/badge.svg)](https://codecov.io/gh/eric-bach/Pecuniary-EventHandler)
+Code Quality | [![CodeFactor](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler/badge)](https://www.codefactor.io/repository/github/eric-bach/pecuniary-eventhandler)
 
 ## License
 
