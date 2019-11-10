@@ -7,9 +7,12 @@ Parameters:
     Description: Application name
     Type: String
     Default: Pecuniary
-  PecuniaryStackParameter:
+  PecuniaryDbStackParameter:
     Type: String
-    Default: pecuniary-stack
+    Default: pecuniary-db-stack
+  PecuniaryTopicsStackParameter:
+    Type: String
+    Default: pecuniary-topics-stack
 
 Globals:
   Function:
@@ -29,23 +32,23 @@ Resources:
         Variables:
           AccountCreatedEventTopic:
             Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-PecuniaryAccountCreatedEventTopicArn
+                !Sub ${PecuniaryTopicsStackParameter}-PecuniaryAccountCreatedEventTopicArn
           AccountUpdatedEventTopic:
             Fn::ImportValue:
-              !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
+              !Sub ${PecuniaryTopicsStackParameter}-PecuniaryAccountUpdatedEventTopicArn
           TransactionCreatedEventTopic:
             Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-PecuniaryTransactionCreatedEventTopicArn 
+                !Sub ${PecuniaryTopicsStackParameter}-PecuniaryTransactionCreatedEventTopicArn 
           SecurityCreatedEventTopic:
             Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-PecuniarySecurityCreatedEventTopicArn
+                !Sub ${PecuniaryTopicsStackParameter}-PecuniarySecurityCreatedEventTopicArn
       Events:
         DynamoDB1:
           Type: DynamoDB
           Properties:
             Stream:
               Fn::ImportValue:
-                !Sub ${PecuniaryStackParameter}-PecuniaryDynamoDbEventStoreStreamArn
+                !Sub ${PecuniaryDbStackParameter}-PecuniaryDynamoDbEventStoreStreamArn
             StartingPosition: TRIM_HORIZON
             BatchSize: 100
       Policies: 
@@ -57,12 +60,12 @@ Resources:
               - sns:Publish
             Resource: 
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-PecuniaryAccountCreatedEventTopicArn
+                 !Sub ${PecuniaryTopicsStackParameter}-PecuniaryAccountCreatedEventTopicArn
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-PecuniaryAccountUpdatedEventTopicArn
+                 !Sub ${PecuniaryTopicsStackParameter}-PecuniaryAccountUpdatedEventTopicArn
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-PecuniaryTransactionCreatedEventTopicArn
+                 !Sub ${PecuniaryTopicsStackParameter}-PecuniaryTransactionCreatedEventTopicArn
               - Fn::ImportValue:
-                 !Sub ${PecuniaryStackParameter}-PecuniarySecurityCreatedEventTopicArn
+                 !Sub ${PecuniaryTopicsStackParameter}-PecuniarySecurityCreatedEventTopicArn
       Tags:
         AppName: !Ref AppName 
